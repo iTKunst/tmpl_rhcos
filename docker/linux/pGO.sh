@@ -45,27 +45,10 @@ log_var USER $USER
 log_var VOL $VOL
 log_var VOL_DIR $VOL_DIR
 
-log_var DB_ADDR $DB_ADDR
-log_var DB_DATABASE $DB_DATABASE
-log_var DB_PASSWORD $DB_PASSWORD
-log_var DB_USER $DB_USER
-log_var DB_VENDOR $DB_VENDOR
-log_var PORT_EXT_ADMIN $PORT_EXT_ADMIN
-log_var PORT_INT_ADMIN $PORT_INT_ADMIN
 
 docker run \
-       -d \
-       -p $HOST:$PORT_EXT:$PORT_INT \
-       -p $HOST:$PORT_EXT_ADMIN:$PORT_INT_ADMIN \
+       -it \
        -v $HOST_DIR:$CONT_DIR \
-       -e DB_ADDR=$DB_ADDR \
-       -e DB_DATABASE=$DB_DATABASE \
-       -e DB_PASSWORD=$DB_PASSWORD \
-       -e DB_USER=$DB_USER \
-       -e DB_VENDOR=$DB_VENDOR \
-       -e KEYCLOAK_IMPORT=$IMPORT \
-       -e KEYCLOAK_PASSWORD=$PASSWORD \
-       -e KEYCLOAK_USER=$USER \
        --label=$LABEL \
        --name=$CONT \
        --network=$NET \
