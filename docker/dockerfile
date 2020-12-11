@@ -1,4 +1,4 @@
-FROM registry.redhat.io/ubi8/ubi
+FROM registry.redhat.io/rhel8/support-tools
 USER root
 LABEL maintainer="John Doe"
 # Disable RHSM
