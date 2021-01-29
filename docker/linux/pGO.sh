@@ -14,6 +14,7 @@ HOST=$PROJ_HOST
 HOST_DIR=$(pwd)$PROJ_HOST_DIR
 IMG=$PROJ_IMG
 LABEL=$PROJ_LABEL
+MODE=$PROJ_MODE
 NET=$PROJ_NET
 PASSWORD=$PROJ_PASSWORD
 PORT_EXT=$PROJ_PORT_EXT
@@ -47,7 +48,7 @@ log_var VOL_DIR $VOL_DIR
 
 
 docker run \
-       -it \
+       -$MODE \
        -v $HOST_DIR:$CONT_DIR \
        --label=$LABEL \
        --name=$CONT \
